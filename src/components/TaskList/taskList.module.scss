@@ -1,0 +1,20 @@
+.title {
+	margin-bottom: 2rem;
+}
+
+.taskCheckbox {
+	flex: 0 0  10%;
+	max-width: 10%;
+	height: 2rem;
+	margin-top: 0.5rem;
+}
+
+.taskName {
+	flex: 0 0 70%;
+	max-width: 70%;
+	padding: 0 0 0.5rem;
+}
+
+.task {
+	display: flex;
+}
