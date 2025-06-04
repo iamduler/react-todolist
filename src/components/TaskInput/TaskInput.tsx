@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 import styles from './taskInput.module.scss'
 import { Todo } from '../../@types/todo.type'
+import { TodoType } from '../../PropTypes/todo.proptype'
 
 interface TaskInputProps {
   addTodo: (name: string) => void
@@ -49,4 +51,13 @@ export default function TaskInput(props: TaskInputProps) {
       </form>
     </div>
   )
+}
+
+TaskInput.propTypes = {
+  addTodo: PropTypes.func.isRequired,
+  // currentTodo: PropTypes.oneOf([TodoType, PropTypes.oneOf([null])]),
+  currentTodo: PropTypes.oneOf([TodoType, null]),
+  editTodo: PropTypes.func.isRequired,
+  startEditingTodo: PropTypes.func.isRequired,
+  finishEditTodo: PropTypes.func.isRequired
 }
