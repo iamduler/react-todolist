@@ -46,14 +46,18 @@ export default function TodoList() {
   }
 
   const handleDoneTodo = (id: string, done: boolean) => {
-    setTodos((prev) => {
-      return prev.map((todo) => {
+    const handler = (todoObj: Todo[]) => {
+      return todoObj.map((todo) => {
         if (todo.id === id) {
           return { ...todo, done }
         }
         return todo
       })
-    })
+    }
+    setTodos(handler)
+
+    // Save to local storage
+    syncLocalStorage(handler)
   }
 
   const startEditingTodo = (id: string) => {
